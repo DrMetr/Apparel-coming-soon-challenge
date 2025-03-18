@@ -2,7 +2,7 @@
     --DesaturatedRed: hsl(0, 36%, 70%);
     --SoftRed: hsl(0, 93%, 68%);
     --DarkGrayishRed: hsl(0, 6%, 24%);
-    --Cream: hsl(0, 100%, 98%);
+    --Cream: hsl(0, 64%, 91%);
     --LightPink: hsl(0, 78%, 86%);
     --Pink: hsl(0, 74%, 74%);
     font-size: 16px;
@@ -19,7 +19,7 @@
 
     @media screen and (min-width: 768px) {
         display: block;
-        height: 100dvh;
+        height: 100%;
     }
 }
 
@@ -33,24 +33,24 @@
 }
 
 body {
-    background-image: linear-gradient(135deg, white, var(--Pink));
-    
+    background-image: linear-gradient(135deg, white, var(--Cream));
+    height: 100vh;
+    background-size: cover;
+}
+
+main {
+    position: relative;
     @media screen and (min-width: 768px) {
-        
-        background-image: url(images/bg-pattern-desktop.svg);
+    background-image: url(images/bg-pattern-desktop.svg);
         background-repeat: no-repeat;
         background-size: cover;
-    
+        height: 100dvh;
     }
 }
 
 h1 {
     text-transform: uppercase;
     font-weight: 300;
-}
-
-main {
-    border: 1px solid black;
 }
 
 .pink_text {
@@ -64,10 +64,35 @@ main {
 }
 
 input {
-    display: inline-block;
+    /*display: inline-block;
     position: relative;
-    overflow: hidden;
+    overflow: hidden;*/
+    padding: 10px 5px;
+    width: 100%;
+    height: 2lh;
+    float: left;
+    border: 0;
 }
+
+.wrapper {
+    background: transparent;
+    width: 80%;
+    height: 4lh;
+}
+
+.cf:before, .cf:after{
+    content:"";
+    display:table;
+}
+
+.cf:after{
+    clear:both;
+}
+
+.cf{
+    zoom:1;
+} 
+
 
 .errinput:placeholder-shown {
     background-image: url("images/icon-error.svg"); 
@@ -84,13 +109,17 @@ input {
 
 button {
     background: var(--LightPink);
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
 	cursor: pointer;
-	outline: inherit;
-}
+    overflow: visible;
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0.5lh;
+    cursor: pointer;
+    border-radius: 40px;
+    box-shadow: -4px 5px 12px var(--Pink);
+    transform: translate(0lh, -2lh);
+}  
 
 .attribution { font-size: 11px; text-align: center; color: var(--DesaturatedRed)}
 .attribution a { color: var(--Pink); }
