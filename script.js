@@ -10,14 +10,14 @@ function validateEmail(emailInput){
 }
 
 function onSubmit(){
+    event.preventDefault();
     if (validateEmail(email.value)) {
+        email.classList.remove('errborder');
         email.classList.remove('errinput');
-        email.style.border = '1px solid black';
-        email.classList.add('.errinput');
         error.style.visibility = 'hidden';
     } else {
         error.style.visibility = 'visible';
-        email.style.border = '2px solid var(--SoftRed)';
+        email.classList.add('errborder');
         email.classList.add('errinput');
     }
 }
